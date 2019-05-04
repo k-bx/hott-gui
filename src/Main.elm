@@ -30,7 +30,26 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    text "hohoho"
+    div [ class "container" ]
+        [ h1 [] [ text "Hey" ]
+        , div []
+            [ iframe [srcdoc """
+<html>
+  <head>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\\\(','\\\\)']]}});
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  </head>
+  <body>
+    When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are
+    $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$
+  </body>
+</html>
+                              """]
+                  []
+            ]
+        ]
 
 
 subscriptions : Model -> Sub Msg

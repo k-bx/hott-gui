@@ -30,7 +30,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    text "ho"
+    text "hohoho"
 
 
 subscriptions : Model -> Sub Msg
